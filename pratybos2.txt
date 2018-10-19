@@ -1,0 +1,10 @@
+1.
+INSERT INTO authors SET name = 'Bill Gates';
+INSERT INTO authors SET name = 'Maironis';
+
+2.
+INSERT INTO books set authorId=10, title='Žiemos raštai', year=1990;
+INSERT INTO books set authorId=9, title='Vasaros raštai', year=1990;
+INSERT INTO books set authorId=10, title='Rudens raštai', year=1990;
+	
+3. UPDATE books SET authorId = 1 where authorId = 10;

@@ -1,0 +1,5 @@
+1.
+a) SELECT COUNT(books.title) AS kiek, authors.name FROM authors LEFT JOIN books ON authors.authorId = books.authorId GROUP BY authors.authorId
+b) SELECT COUNT(books.title) AS kiek, authors.name FROM authors INNER JOIN books ON authors.authorId = books.authorId GROUP BY authors.authorId
+	
+2. DELETE FROM authors WHERE authors.authorId NOT IN (SELECT authorId FROM books WHERE authorId IS NOT NULL GROUP BY authorId)

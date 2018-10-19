@@ -1,0 +1,3 @@
+SELECT authorId, name FROM authors
+UNION
+SELECT title, authorId from books

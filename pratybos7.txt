@@ -1,0 +1,11 @@
+1. CREATE TABLE authorBooks(
+	authorId int(10),
+    	bookId int(10)
+)
+
+2. 	INSERT INTO authorbooks (authorId, bookId) SELECT authorId, bookId FROM books
+
+	ALTER TABLE books DROP COLUMN authorId
+
+3. 	SELECT bookId, GROUP_CONCAT(authorId) FROM authorbooks GROUP BY bookId
+4. 	ALTER TABLE books CONVERT TO CHARACTER SET utf8

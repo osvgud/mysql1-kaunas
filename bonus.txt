@@ -1,0 +1,20 @@
+CREATE TABLE news(
+	newsId int(10) PRIMARY KEY AUTO_INCREMENT,
+    text varchar(255),
+    date TIMESTAMP
+);
+
+CREATE TABLE comments(
+	commentId int(10) PRIMARY KEY AUTO_INCREMENT,
+    text varchar(255),
+    date TIMESTAMP,
+    newsId int(10)
+);
+
+SELECT * FROM news 
+LEFT JOIN (
+	SELECT newsId, MIN(date) as date, text 
+	FROM comments GROUP BY newsId
+	) 
+comments ON news.newsId = comments.newsId 
+ORDER BY news.date LIMIT 10

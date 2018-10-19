@@ -1,0 +1,21 @@
+CREATE TABLE authorBooks(
+	authorId int(10),
+    bookId int(10)
+);
+INSERT INTO authorbooks (authorId, bookId) SELECT authorId, bookId FROM books;
+ALTER TABLE books DROP COLUMN authorId;
+
+BONUS
+
+CREATE TABLE News(
+	newsId int(10) AUTO_INCREMENT,
+    text varchar(255),
+    date TIMESTAMP
+);
+
+CREATE TABLE Comments(
+	commentId int(10) AUTO_INCREMENT,
+    text varchar(255),
+    date TIMESTAMP,
+    newsId int(10)
+);
